@@ -14,11 +14,11 @@ export default function Home() {
   };
   return (
     <main className="flex min-h-screen justify-center items-center gap-10">
-      <div className="flex mx-auto items-center justify-center max-w-[430px] h-[100vh]">
+      <div className="flex mx-auto items-center justify-center w-[100vw] h-[100vh]">
         {!isLoaded && <p className="absolute z-[-1]">Loading Application... {Math.round(loadingProgression * 100)}%</p>}
         <Unity
           unityProvider={unityProvider}
-          style={{ maxWidth: 430, height: "inherit" }}
+          style={{ aspectRatio: 0.4613733906, maxWidth: 430, width: "inherit"}}
         />
       </div>
     </main>
