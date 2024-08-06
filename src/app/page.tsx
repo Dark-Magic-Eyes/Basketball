@@ -10,11 +10,11 @@ export default function Home() {
     streamingAssetsUrl: "StreamingAssets",
   });
   const handleClickLoadButton = () => {
-    sendMessage("AssetManager", "LoadAssetPreview");
+    sendMessage("AssetManager", "LoadAssetPreview", "https://66b18a7b1ca8ad33d4f45f7d.mockapi.io/game/api/background/1");
   };
   return (
     <main className="flex min-h-screen justify-center items-center gap-10">
-      <div className="flex mx-auto items-center justify-center w-[100vw] h-[100vh]">
+      <div className="flex mx-auto items-center justify-center w-[100vw] h-[100vh] drop-shadow-glow">
         {!isLoaded && <p className="absolute z-[-1]">Loading Application... {Math.round(loadingProgression * 100)}%</p>}
         <Unity
           unityProvider={unityProvider}
