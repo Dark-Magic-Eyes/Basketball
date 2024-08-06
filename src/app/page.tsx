@@ -14,13 +14,11 @@ export default function Home() {
   };
   return (
     <main className="flex min-h-screen justify-center items-center mx-6 gap-10">
-      <div>
-        <button onClick={handleClickLoadButton} className="bg-white text-black">Change Assets</button>
-      </div>
-      <div className="flex h-full">
+      <div className="flex items-center justify-center w-[430px] h-[100vh]">
+        <p className="absolute z-[-1]">Loading Application... {Math.round(loadingProgression * 100)}%</p>
         <Unity
           unityProvider={unityProvider}
-          style={{ width: 430, height: 932 }}
+          style={{ maxWidth: 430, height: "inherit" }}
         />
       </div>
     </main>
