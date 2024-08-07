@@ -15,6 +15,7 @@ export default function Home() {
   }, [isLoaded]);
   useEffect(()=>{
     window.addEventListener("message", (event)=>{
+      console.log(event);
       handleClickLoadButton();
     })
     return ()=>{
