@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 export default function Home() {
@@ -9,9 +10,12 @@ export default function Home() {
     codeUrl: "Build/Basketball.wasm",
     streamingAssetsUrl: "StreamingAssets",
   });
-  window.addEventListener("message", (event)=>{
-    handleClickLoadButton();
-  })
+  useEffect(()=>{
+    window.addEventListener("message", (event)=>{
+      handleClickLoadButton();
+    })
+  }, [])
+
   const handleClickLoadButton = () => {
     sendMessage("AssetManager", "LoadAssetPreview", "https://66b18a7b1ca8ad33d4f45f7d.mockapi.io/game/api/background/1");
   };
